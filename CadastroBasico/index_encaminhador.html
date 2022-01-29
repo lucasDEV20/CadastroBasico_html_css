@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Exercicios HTML
+    </header>
+    <nav>
+        <a href="index.html">00 - teste</a>|
+        <!-- <a href="exercicios/texto1.html">01 - texto 1 </a>|
+            <a href="exercicios/texto2.html">02 -  texto 2  </a>|-->
+        <!--   </nav>
+    <section id="conteudo"></section>
+    <footer>
+        curso web moderno
+    </footer>-->
+
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+
+                link.onclick = function(e) {
+                    e.preventDefault()
+
+
+                    fetch(link.href)
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                        //criando chamada ajax para os conteudos dentro da pagina
+                        //console
+
+                    //assosiando cada um dos links a uma funçao 
+                    //para poder previnir o comportamento padrao padrao que seria 
+                    //a navegaçao 
+
+                }
+            })
+        </script>
+
+</body>
+
+</html>
